@@ -523,8 +523,6 @@ export default function Whiteboard2(props) {
     navigate(`/login`);
   }
   return (
-    <div>
-      {!isMobile ?
       <div id="screenshot" className="canvas-container" onDragOver={dragOver}>
       <div style={{ position: "fixed", left: "0%", right: "0%" }}>
         {/* buttons are fixed so canvas isn't offset */}
@@ -535,7 +533,9 @@ export default function Whiteboard2(props) {
           setLoginStatus={props.setLoginStatus}
         />
       </div>
+
       <div style={{ position: "fixed" }}>
+        
         <div>
           <Toolbar
             setTool={setTool}
@@ -549,6 +549,7 @@ export default function Whiteboard2(props) {
             undo={undo}
             redo={redo}
             setImageUpload={setImageUpload}
+            isMobile={isMobile}
           />
         </div>
 
@@ -624,33 +625,7 @@ export default function Whiteboard2(props) {
         onMouseUp={finishDrawing}
       ></canvas>
     </div>
-       : 
-       <div id="screenshot" className="canvas-container" onDragOver={dragOver}>
-       <div style={{ position: "fixed", left: "0%", right: "0%" }}>
-         {/* buttons are fixed so canvas isn't offset */}
-         <Header
-           tabIndex={1}
-           getToken={props.getToken}
-           loginStatus={props.loginStatus}
-           setLoginStatus={props.setLoginStatus}
-         />
-       </div>
-          <h1 style={{position: "fixed", top: "25%"}} className="mobile-message">This webpage is not currently optimised<br/>for mobile devices.</h1>
- 
-       {/* CANVAS CONTAINER */}
-       <canvas
-         id="canvas"
-         width={window.innerWidth}
-         height={window.innerHeight}
-         style={{ backgroundImage: `url(${backgroundImage})` }}
-         onMouseDown={startDrawing}
-         onMouseMove={draw}
-         onMouseUp={finishDrawing}
-       ></canvas>
-     </div>
-      
-    }
-    
-    </div>
+  
+  
   );
 }

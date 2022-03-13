@@ -87,7 +87,7 @@ export default function Toolbar({
       {showToolbar && (
       <div className="toolbar-container">
         {isMobile && <h1 className="mobile-message">Note: This webpage is not currently optimised for mobile devices.</h1>}
-
+        
         <p className="toolbar-sections">Current tool: {tool}</p>
 
         {/* SELECT BUTTON */}

@@ -86,10 +86,8 @@
         height: 50vh;
     }
     .landing-body-bottom {
-        bottom: 0;
-        margin: 0 auto;
-        display: block;
-        width: 100vw;
+        width: 100%;
+        margin: 0;
     }
     .landing-photo {
         margin-top: 10px;

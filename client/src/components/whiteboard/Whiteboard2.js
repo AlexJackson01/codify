@@ -635,9 +635,7 @@ export default function Whiteboard2(props) {
            setLoginStatus={props.setLoginStatus}
          />
        </div>
-       <div style={{ position: "fixed", top: "20%" }}>
-        <h1 className="mobile-message">This webpage is currently not optimised for mobile devices.</h1>
-      </div>
+          <h1 style={{position: "fixed", top: "25%"}} className="mobile-message">This webpage is not currently optimised<br/>for mobile devices.</h1>
  
        {/* CANVAS CONTAINER */}
        <canvas
